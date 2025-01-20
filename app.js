@@ -28,3 +28,14 @@ function listarAmigos(tag) {
     }
 }
 
+// Sorteio aleatório: Ao clicar no botão "Sortear Amigo", um nome da lista será selecionado aleatoriamente e exibido na página.
+function sortearAmigo() {
+    document.getElementById('button-sortear').addEventListener('click', sortearAmigo);
+    if (listaDeAmigos.length === 0) {
+        alert('A lista está vazia! Adicione amigos antes de sortear.');
+        return;
+    }
+    const indiceAleatorio = Math.floor(Math.random() * listaDeAmigos.length);
+    const amigoSorteado = listaDeAmigos[indiceAleatorio];
+    document.getElementById('resultado').textContent = `Amigo sorteado: ${amigoSorteado}`;
+}
