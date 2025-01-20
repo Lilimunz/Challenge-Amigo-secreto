@@ -16,3 +16,15 @@ document.getElementById('button-add').addEventListener('click', () => {
     listarAmigos('listaAmigos');
 });
 
+// Visualizar a lista: Os nomes inseridos aparecerão em uma lista abaixo do campo de entrada.
+function listarAmigos(tag) {
+    const lista = document.querySelector(`#${tag}`);
+    lista.innerHTML = ''; // Limpa a lista antes de adicionar os novos elementos
+
+    for (let i = 0; i < listaDeAmigos.length; i++) {
+        const li = document.createElement('li');
+        li.textContent = listaDeAmigos[i];
+        lista.appendChild(li);
+    }
+}
+
